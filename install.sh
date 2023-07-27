@@ -9,12 +9,12 @@ basestrap /mnt base base-devel runit elogind-runit
 basestrap /mnt linux linux-firmware
 fstabgen -U /mnt >> /mnt/etc/fstab
 
-# Copy the chroot_script.sh to the /mnt directory so it's available inside the chroot environment
+# copy the chroot_script.sh to the /mnt 
 cp chroot_script.sh /mnt
 
-# Use chroot to execute the chroot_script.sh from within the chroot environment
+# execute the chroot_script.sh from within the chroot environment
 artix-chroot /mnt /bin/sh /chroot_script.sh
 
-# Continue with the remaining commands after chroot exits
+# rest of script after chroot
 umount -R /mnt
 reboot
