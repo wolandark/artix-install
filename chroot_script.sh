@@ -14,6 +14,7 @@ read us
 useradd -m "$us"
 echo "Enter "$us" Password"
 passwd "$us"
+usermod -aG wheel "$us"
 echo "artix" > /etc/hostname
 echo "127.0.0.1        localhost
 ::1              localhost
