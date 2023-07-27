@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo 'label: dos' | sudo sfdisk --no-reread /dev/vda
+echo ',,83' | sudo sfdisk --no-reread --append /dev/vda
 mkfs.ext4 -L ROOT /dev/vda1
 mount /dev/disk/by-label/ROOT /mnt
 sv up ntpd
