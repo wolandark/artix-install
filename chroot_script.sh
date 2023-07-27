@@ -21,8 +21,8 @@ echo "127.0.0.1        localhost
 127.0.1.1        myhostname.localdomain  myhostname
 " > /etc/hosts
 pacman -S dhcpcd dhcpcd-runit
-ln -s /etc/runit/sv/dhcp /etc/runit/runsvdir/default
+ln -s /etc/runit/sv/dhcp /run/runit/service/
 pacman -S connman-runit connman-gtk
-ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
+ln -s /etc/runit/sv/connmand /run/runit/service/
 sed -i '/^# %wheel/s/^# //' /etc/sudoers
 pacman -S vim 
